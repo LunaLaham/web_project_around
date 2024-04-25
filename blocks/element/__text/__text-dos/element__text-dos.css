@@ -3,7 +3,9 @@
   padding-top: 30px;
   font-weight: 900;
   font-family: "Inter";
-  
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 
