@@ -42,9 +42,10 @@ imagePopup.addEventListener("click", () => closeImagePreview());
 const closeImagePreview=()=>{
   imagePopup.classList.add("popup_disable");
 }
-const openImage = (imageSrc) => {
+const openImage = (imageSrc, name) => {
   imagePopup.classList.remove("popup_disable");
   imagePreview.src=imageSrc;
+  imagePreview.alt=name;
   //SErt the image URL to imageSrc
 };
 const elements = document.querySelector(".elements");
@@ -61,7 +62,7 @@ const createCard = (card) => {
 
   imageElement.src = card.link;
   imageElement.alt = card.name;
-  imageElement.addEventListener("click", () => openImage(imageElement.src));
+  imageElement.addEventListener("click", () => openImage(imageElement.src, card.name));
 
 
   trashElement.src = "./images/Trash.svg";
