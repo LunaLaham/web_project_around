@@ -157,3 +157,18 @@ profileAddForm.addEventListener("submit", function (evt) {
   elements.insertBefore(cardElement, elements.firstChild);
   closeAdd();
 });
+
+
+
+  
+  function closeWithEsc(event) {
+    if (event.key === "Escape") {
+      closeCity();
+      closeAdd();
+      
+    }
+  };
+  document.addEventListener("keydown", (event) => closeWithEsc(event));
+    
+
+  
