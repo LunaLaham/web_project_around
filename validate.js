@@ -33,6 +33,7 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", function () {
         checkInputValidity(formElement, inputElement, settings);
+        toggleButtonState(inputList, settings, formElement);
       });
     });
   };
@@ -52,7 +53,9 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
 
   //habilitar bottones
 
-  const toggleButtonState = (inputList, button, Element, settings) => {
+  const toggleButtonState = (inputList, settings) => {
+    const buttonElement = formElement.querySelector(settings, submitButtonSelector);
+    
     if(hasInvalidInput(inputList)){
         buttonElement.classList.add(settings.inactiveButtonClass);
 
