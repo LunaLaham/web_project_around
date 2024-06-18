@@ -1,11 +1,3 @@
-//validacion de datos
-
-
-
-
-
-
-
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     inputElement.classList.add(settings.inputErrorClass);
@@ -51,7 +43,6 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     });
   };
 
-  //habilitar bottones
 
   const toggleButtonState = (inputList, settings) => {
     const buttonElement = formElement.querySelector(settings, submitButtonSelector);
@@ -64,7 +55,6 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
     }
   };
 
-  //habilitar botones
 
   function toggleButton()
             {
@@ -77,11 +67,7 @@ const showInputError = (formElement, inputElement, errorMessage, settings) => {
                 }
             }
             
-  
- 
-
-
-  const formValues = {
+    const formValues = {
     formSelector: ".form__profile",
     inputSelector: ".form__input",
     submitButtonSelector: "form__create-button",
