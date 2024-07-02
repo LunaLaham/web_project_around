@@ -144,6 +144,9 @@ const profileForm = document.querySelector("#profile-form");
 
 profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  if (inputName.value === "" || inputProfesion.value === "") {
+    return;
+ }
   profileName.textContent = inputName.value;
   profileProfesion.textContent = inputProfesion.value;
 });
@@ -153,6 +156,9 @@ const addName = document.querySelector("#nameToAdd");
 const addURL = document.querySelector("#urlToadd");
 profileAddForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
+  if (addName.value === "" || addURL.value === "") {
+    return;
+ }
   const cardElement=createCard({name:addName.value,link:addURL.value});
   elements.insertBefore(cardElement, elements.firstChild);
   closeAdd();
