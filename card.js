@@ -60,6 +60,11 @@ export default class Card {
   }
 }
 
+export function createCard(item) {
+    const card = new Card(item.name, item.link, ".template-card");
+    return card.generateCard();
+}
+
 // document.querySelector(".card-list__items").append(cardElement);
 //  });
 
