@@ -34,8 +34,11 @@ export default class FormValidator {
     
     if(this.hasInvalidInput(inputList)){
         buttonElement.classList.add(this.settings.inactiveButtonClass);
+        buttonElement.disabled = true;
+
     }else {
         buttonElement.classList.remove(this.settings.inactiveButtonClass);
+        buttonElement.disabled = false;
     }
   };
   setEventListeners() {
