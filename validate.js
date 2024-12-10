@@ -4,8 +4,8 @@
 
   function toggleButton()
             {
-                var username = document.getElementById('name').value;
-                var password = document.getElementById('profesion').value;
+                const username = document.getElementById('name').value;
+                const password = document.getElementById('profesion').value;
                 if (username && password) {
                     document.getElementsByClassName("submitButtonSelector") .disabled = false;
                 } else {
