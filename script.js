@@ -171,6 +171,7 @@ profileAddForm.addEventListener("submit", function (evt) {
     if (event.key === "Escape") {
       closeCity();
       closeAdd();
+      closeImagePreview();
       
     }
   };
