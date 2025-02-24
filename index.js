@@ -1,5 +1,5 @@
-import FormValidator from './formValidator.js';
-import {createCard} from "./card.js"; 
+import FormValidator from "./formValidator.js";
+import { createCard } from "./components/Card.js";
 
 const initialCards = [
   {
@@ -28,33 +28,31 @@ const initialCards = [
   },
 ];
 
-       
-  const enableValidation = (settings) => {
-    const formList = Array.from(document.querySelectorAll(settings.formSelector));
-    formList.forEach((formElement) => {
-      formElement.addEventListener("submit", function (evt) {
-        evt.preventDefault();
-      });
-  
-      let formValidate=new  FormValidator(settings,formElement)
-      formValidate.setEventListeners()
+const enableValidation = (settings) => {
+  const formList = Array.from(document.querySelectorAll(settings.formSelector));
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", function (evt) {
+      evt.preventDefault();
     });
-  };
-  enableValidation( {
-    formSelector: ".form__profile",
-    inputSelector: ".form__input",
-    submitButtonSelector: ".form__create-button",
-    inactiveButtonClass: "popup_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible"
+
+    let formValidate = new FormValidator(settings, formElement);
+    formValidate.setEventListeners();
   });
-
-const elements = document.querySelector(".elements");
-
-initialCards.forEach((item) => {
-  const cardNode = createCard(item);
-  elements.append(cardNode)
+};
+enableValidation({
+  formSelector: ".form__profile",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
 });
 
- 
+const elements = document.querySelector(".cards__list");
+//
+//initialCards.forEach((item) => {
+//const cardNode = createCard(item);
+//elements.append(cardNode);
+//});
 
+const cardlist = new Section({ initialCards });

@@ -1,35 +1,35 @@
-import {createCard} from "./card.js"; 
+import { createCard } from "./components/Card.js";
 
 const addbutton = document.querySelector(".profile__add-button");
 const popUpAdd = document.querySelector(".popup.popupadd");
+const popupProfile = document.querySelector(".popup.profilepopup");
 addbutton.addEventListener("click", () => openAdd());
 
-const submitButton = document.querySelector(".form__create-button");
+const profileEditButton = document.querySelector(".profile__edit-button");
 
 /*****CITY POPUP */
-const botoCity = document.querySelector(".profile__button");
+const botoCity = document.querySelector(".profile__info");
 const popUpCity = document.querySelector(".popup.form");
-botoCity.addEventListener("click", () => openCity());
-function openCity() {
-    popUpCity.classList.remove("popup_disable");
-}
+
 function openAdd() {
-    popUpAdd.classList.remove("popup_disable");
-} 
-const closeButton = document.querySelector(".popup .form__close-button");
+  console.log("evento click");
+  popUpAdd.classList.add("popup__disable");
+}
+const closeButton = document.querySelector(".popup .popup__close");
 closeButton.addEventListener("click", () => closeCity());
 function closeCity() {
-  popUpCity.classList.add("popup_disable");
+  popupProfile.classList.remove("popup__disable");
 }
-submitButton.addEventListener("click", () => closeCity());
-function crearCity() {
-  popUpCity.classList.add("form__create-button");
+profileEditButton.addEventListener("click", () => openPopupProfile());
+function openPopupProfile() {
+  console.log("click");
+  popupProfile.classList.add("popup__disable");
 }
 
-const closeAddButton = document.querySelector(".popupadd .form__close-button");
+const closeAddButton = document.querySelector(".popupadd .popup__close");
 closeAddButton.addEventListener("click", () => closeAdd());
 function closeAdd() {
-  popUpAdd.classList.add("popup_disable");
+  popUpAdd.classList.remove("popup__disable");
 }
 
 const inputName = document.querySelector("#name");
@@ -49,7 +49,6 @@ profileForm.addEventListener("submit", function (evt) {
   profileProfesion.textContent = inputProfesion.value;
 });
 
-
 function closeWithEsc(event) {
   if (event.key === "Escape") {
     closeCity();
@@ -58,28 +57,26 @@ function closeWithEsc(event) {
 }
 document.addEventListener("keydown", (event) => closeWithEsc(event));
 
- profileForm.addEventListener("submit", function (evt) {
-   evt.preventDefault();
-   if (inputName.value === "" || inputProfesion.value === "") {
-     return;
+profileForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  if (inputName.value === "" || inputProfesion.value === "") {
+    return;
   }
-   profileName.textContent = inputName.value;
-   profileProfesion.textContent = inputProfesion.value;
- });
- 
- const profileAddForm = document.querySelector("#profileadd-form");
- const addName = document.querySelector("#nameToAdd");
- const addURL = document.querySelector("#urlToadd");
- const elements = document.querySelector(".elements");
+  profileName.textContent = inputName.value;
+  profileProfesion.textContent = inputProfesion.value;
+});
 
- profileAddForm.addEventListener("submit", function (evt) {
-   evt.preventDefault();
-   if (addName.value === "" || addURL.value === "") {
-     return;
+const profileAddForm = document.querySelector("#profileadd-form");
+const addName = document.querySelector("#nameToAdd");
+const addURL = document.querySelector("#urlToadd");
+const elements = document.querySelector(".elements");
+
+profileAddForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  if (addName.value === "" || addURL.value === "") {
+    return;
   }
-   const cardElement=createCard({name:addName.value,link:addURL.value});
-   elements.insertBefore(cardElement, elements.firstChild);
-   closeAdd();
- });
- 
- 
+  const cardElement = createCard({ name: addName.value, link: addURL.value });
+  elements.insertBefore(cardElement, elements.firstChild);
+  closeAdd();
+});

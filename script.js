@@ -39,13 +39,13 @@ const toggleHeart = (heartElement) => {
 const imagePopup = document.querySelector(".popup.imagepopup");
 const imagePreview = document.querySelector(".imagePreview");
 imagePopup.addEventListener("click", () => closeImagePreview());
-const closeImagePreview=()=>{
+const closeImagePreview = () => {
   imagePopup.classList.add("popup_disable");
-}
+};
 const openImage = (imageSrc, name) => {
   imagePopup.classList.remove("popup_disable");
-  imagePreview.src=imageSrc;
-  imagePreview.alt=name;
+  imagePreview.src = imageSrc;
+  imagePreview.alt = name;
   //SErt the image URL to imageSrc
 };
 const elements = document.querySelector(".elements");
@@ -57,13 +57,14 @@ const createCard = (card) => {
   const textContainer = createEl("div", "element__text");
   const titleElement = createEl("h2", "element__text-dos");
   const heartElement = createEl("img", "element__heart");
-  
+
   const activeHeartElement = createEl("img", "element__heart-activo");
 
   imageElement.src = card.link;
   imageElement.alt = card.name;
-  imageElement.addEventListener("click", () => openImage(imageElement.src, card.name));
-
+  imageElement.addEventListener("click", () =>
+    openImage(imageElement.src, card.name)
+  );
 
   trashElement.src = "./images/Trash.svg";
   trashElement.alt = "boton basura";
@@ -82,10 +83,9 @@ const createCard = (card) => {
   return elementDiv;
 };
 initialCards.forEach((card) => {
-  const elementDiv=createCard(card);
+  const elementDiv = createCard(card);
   elements.appendChild(elementDiv);
 });
-
 
 // Capturo botones y variables
 const botoCity = document.querySelector(".profile__button");
@@ -127,11 +127,11 @@ function eliminar(e) {
 }
 
 //funcion boton crear
-const submitButton = document.querySelector(".form__create-button");
+const submitButton = document.querySelector(".popup__button");
 
 submitButton.addEventListener("click", () => closeCity());
 function crearCity() {
-  popUpCity.classList.add("form__create-button");
+  popUpCity.classList.add("popup__button");
 }
 
 const inputName = document.querySelector("#name");
@@ -146,7 +146,7 @@ profileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   if (inputName.value === "" || inputProfesion.value === "") {
     return;
- }
+  }
   profileName.textContent = inputName.value;
   profileProfesion.textContent = inputProfesion.value;
 });
@@ -158,24 +158,17 @@ profileAddForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   if (addName.value === "" || addURL.value === "") {
     return;
- }
-  const cardElement=createCard({name:addName.value,link:addURL.value});
+  }
+  const cardElement = createCard({ name: addName.value, link: addURL.value });
   elements.insertBefore(cardElement, elements.firstChild);
   closeAdd();
 });
 
-
-
-  
-  function closeWithEsc(event) {
-    if (event.key === "Escape") {
-      closeCity();
-      closeAdd();
-      closeImagePreview();
-      
-    }
-  };
-  document.addEventListener("keydown", (event) => closeWithEsc(event));
-    
-
-  
+function closeWithEsc(event) {
+  if (event.key === "Escape") {
+    closeCity();
+    closeAdd();
+    closeImagePreview();
+  }
+}
+document.addEventListener("keydown", (event) => closeWithEsc(event));
