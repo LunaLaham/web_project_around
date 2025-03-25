@@ -1,3 +1,5 @@
+
+
 class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector); // Selecciona el popup
@@ -6,14 +8,14 @@ class Popup {
   }
 
   // Método para abrir el popup
-  open() {
-    this._popup.classList.add("popup_opened");
+  open() { 
+    this._popup.classList.add("popup_is-opened");
     document.addEventListener("keydown", this._handleEscClose); // Escucha la tecla Esc
   }
 
   // Método para cerrar el popup
   close() {
-    this._popup.classList.remove("popup_opened");
+    this._popup.classList.remove("popup_is-opened");
     document.removeEventListener("keydown", this._handleEscClose); // Deja de escuchar la tecla Esc
   }
 
@@ -24,3 +26,14 @@ class Popup {
     }
   }
 }
+
+_setEventListeners() {
+  this._closeIcon.addEventListener('click', () => this.close()); 
+    this._handleEscClose.addEventListener('click', () => this.close()); 
+    document.addEventListener('keydown', (event) => this._handleEscClose(event)); 
+  }
+
+}
+
+
+export default Popup;

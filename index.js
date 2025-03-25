@@ -1,5 +1,9 @@
-import FormValidator from "./formValidator.js";
+import FormValidator from "./components/formValidator.js";
 import { createCard } from "./components/Card.js";
+import Section from "./components/section.js";
+import PopupWithForm from "./components/PopupWithForm.js";
+import Popup from "./components/popup.js";
+
 
 const initialCards = [
   {
@@ -55,4 +59,14 @@ const elements = document.querySelector(".cards__list");
 //elements.append(cardNode);
 //});
 
-const cardlist = new Section({ initialCards });
+const cardlist = new Section(
+  {
+    items: initialCards,
+    renderer: (data) => {
+      cardlist.addItem(createCard(data));
+    },
+  },
+  ".cards__list"
+);
+
+cardlist.renderItems();
