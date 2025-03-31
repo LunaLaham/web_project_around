@@ -33,7 +33,7 @@ _setEventListeners() {
     document.addEventListener('keydown', (event) => this._handleEscClose(event)); 
   }
 
-}
+
 
 
 export default Popup;
