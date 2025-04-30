@@ -1,0 +1,140 @@
+<DOCTYPE html>
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Web Project Around</title>
+      <link rel="stylesheet" href="./pages/index.css" />
+    </head>
+
+    <body>
+      <div class="page">
+        <header class="header">
+          <img
+            class="header__logo"
+            src="./images/Vector.png"
+            alt="imagen logo"
+          />
+
+          <div class="header__line"></div>
+        </header>
+
+        <main class="content">
+          <section class="profile page__section">
+            <img
+              class="profile__image"
+              src="./images/Avatar.png"
+              alt="Avatar"
+            />
+
+            <div class="profile__info">
+              <h1 class="profile__title">Jacques Cousteau</h1>
+              <button class="profile__edit-button" type="button"></button>
+              <p class="profile__description">Explorador</p>
+            </div>
+            <button class="profile__add-button" type="button"></button>
+          </section>
+
+          <section class="cards page__section">
+            <ul class="cards__list"></ul>
+          </section>
+        </main>
+
+        <div class="popup profilepopup">
+          <div class="popup__content">
+            <form id="profile-form" class="popup__form" novalidate>
+              <img
+                class="popup__close"
+                src="./images/CloseIcon.png"
+                alt="boton de cerrar"
+              />
+
+              <h2 class="form__title">Editar Perfil</h2>
+              <input
+                id="name"
+                class="popup__input"
+                type="text"
+                placeholder="Nombre"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span class="popup__error name-error"></span>
+              <input
+                id="profesion"
+                class="popup__input"
+                type="text"
+                placeholder="Acerca de mi"
+                minlength="3"
+                maxlength="40"
+                required
+              />
+              <span class="popup__error profesion-error"></span>
+              <input class="popup__button" type="submit" value="Crear" />
+            </form>
+          </div>
+        </div>
+
+        <div class="popup imagepopup">
+          <img
+            class="imagePreview"
+            src="../images/CloseIcon.png"
+            alt="image preview"
+          />
+        </div>
+
+        <div class="popup popupadd">
+          <div class="popup__content">
+            <form id="profileadd-form" class="popup__form" novalidate>
+              <img
+                class="popup__close"
+                src="./images/CloseIcon.png"
+                alt="image preview"
+              />
+
+              <h2 class="form__title">Agregar lugar nuevo</h2>
+              <input
+                id="nameToAdd"
+                class="popup__input"
+                type="text"
+                placeholder="Titulo"
+                minlength="10"
+                maxlength="30"
+                required
+              />
+              <span class="popup__error nameToAdd-error"></span>
+              <input
+                id="urlToadd"
+                class="popup__input"
+                type="text"
+                placeholder="Imagen URL"
+                minlength="10"
+                maxlength="140"
+                required
+              />
+              <span class="popup__input_type_error"></span>
+
+              <input class="popup__button" type="submit" value="Save" />
+            </form>
+          </div>
+        </div>
+        <footer>
+          <p class="footer footer__copyright">© 2023 Luna Laham</p>
+        </footer>
+      </div>
+
+      <template class="template-card">
+        <div class="card">
+          <img src="images/Trash.svg" alt="" class="card__trash" />
+          <img src="" alt="" class="card__image" />
+          <div class="card__text">
+            <h2 class="card__text-dos"></h2>
+            <img src="images/Group.svg" alt="" class="card__heart" />
+          </div>
+        </div>
+      </template>
+      <script src="./utils.js" type="module"></script>
+      <script src="./index.js" type="module"></script>
+    </body>
+  </html>
+</DOCTYPE>
