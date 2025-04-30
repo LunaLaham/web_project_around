@@ -3,8 +3,14 @@ import { createCard } from "./components/Card.js";
 import Section from "./components/section.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import PopupWithImage from "./components/PopupWithImage.js";
-import Popup from "./components/popup.js";  
+import Popup from "./components/popup.js";
+const profileEditButton = document.querySelector(".profile__edit-button");
 
+const userInfoPopup = new PopupWithForm(".profilepopup");
+
+profileEditButton.addEventListener("click", () => {
+  userInfoPopup.open();
+});
 
 const initialCards = [
   {

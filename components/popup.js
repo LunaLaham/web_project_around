@@ -1,5 +1,6 @@
 class Popup {
   constructor(popupSelector) {
+    console.log("Ya esta trabajando la clase");
     this._popup = document.querySelector(popupSelector); // Selecciona el popup
     this._closeIcon = this._popup.querySelector(".popup__close"); // Icono para cerrar el popup
     this._handleEscClose = this._handleEscClose.bind(this); // Enlaza el método al contexto de la clase
