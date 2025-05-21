@@ -2,15 +2,18 @@ import FormValidator from "./components/formValidator.js";
 import { createCard } from "./components/Card.js";
 import Section from "./components/section.js";
 import PopupWithForm from "./components/PopupWithForm.js";
-import PopupWithImage from "./components/PopupWithImage.js";
 import Popup from "./components/popup.js";
+import UserInfo from "./components/UserInfo.js";
+
 const profileEditButton = document.querySelector(".profile__edit-button");
-
+const addbutton = document.querySelector(".profile__add-button");
+const UserData = new UserInfo(".profile__title", ".profile__description");
 const userInfoPopup = new PopupWithForm(".profilepopup");
-
-profileEditButton.addEventListener("click", () => {
-  userInfoPopup.open();
-});
+const profileForm = document.querySelector("#profile-form");
+const profileCard = document.querySelector("#profileadd-form");
+profileForm.setEventListeners();
+const addCardPopup = new PopupWithForm(".popupadd");
+profileEditButton.addEventListener("click", () => {});
 
 const initialCards = [
   {
@@ -51,10 +54,10 @@ const enableValidation = (settings) => {
   });
 };
 enableValidation({
-  formSelector: ".form__profile",
-  inputSelector: ".form__input",
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__disabled",
+  inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible",
 });
@@ -77,3 +80,9 @@ const cardlist = new Section(
 );
 
 cardlist.renderItems();
+
+const infoValidator = new FormValidator(enableValidation, profileForm);
+infoValidator.enableValidation();
+
+const cardValidator = new FormValidator(enableValidation, profileCard);
+cardValidatorValidator.enableValidation();

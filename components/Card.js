@@ -1,5 +1,4 @@
-const imagePopup = document.querySelector(".imagepopup");
-const imagePreview = document.querySelector(".imagePreview");
+import PopupWithImage from "./PopupWithImage.js";
 
 export default class Card {
   constructor(name, link, cardSelector) {
@@ -35,6 +34,10 @@ export default class Card {
   }
 
   _setEventListeners() {
+    //imagePreview.addEventListener("click", () => {
+    // imagePopup.open();
+    // });
+
     this.cardImage.addEventListener("click", () => {
       this._handleImageClick();
     });
@@ -43,10 +46,12 @@ export default class Card {
   }
 
   _handleImageClick() {
+    const imagePopup = new PopupWithImage(".imagepopup");
+    imagePopup.open(this._link, this._name);
     console.log(`Image clicked: ${this._name}`);
-    imagePopup.classList.add("popup__disable");
-    imagePreview.src = this._link;
-    imagePreview.alt = this._name;
+    // imagePopup.classList.add("popup__disable");
+    //imagePreview.src = this._link;
+    //imagePreview.alt = this._name;
   }
   deleteCard() {
     this.element.remove();

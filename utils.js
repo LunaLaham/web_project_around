@@ -1,11 +1,7 @@
 import { createCard } from "./components/Card.js";
 
-const addbutton = document.querySelector(".profile__add-button");
 const popUpAdd = document.querySelector(".popup.popupadd");
 const popupProfile = document.querySelector(".popup.profilepopup");
-addbutton.addEventListener("click", () => openAdd());
-
-const profileEditButton = document.querySelector(".profile__edit-button");
 
 /*****CITY POPUP */
 const botoCity = document.querySelector(".profile__info");
@@ -19,11 +15,6 @@ const closeButton = document.querySelector(".popup .popup__close");
 closeButton.addEventListener("click", () => closeCity());
 function closeCity() {
   popupProfile.classList.remove("popup__disable");
-}
-profileEditButton.addEventListener("click", () => openPopupProfile());
-function openPopupProfile() {
-  console.log("click");
-  popupProfile.classList.add("popup__disable");
 }
 
 const closeAddButton = document.querySelector(".popupadd .popup__close");

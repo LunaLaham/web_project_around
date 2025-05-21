@@ -2,8 +2,8 @@ import Popup from "./popup.js";
 class PopupWithImage extends Popup {
   constructor(popupSelector) {
     super(popupSelector);
-    this._image = this._popupElement.querySelector(".popup__image");
-    
+    this._element = document.querySelector(popupSelector);
+    this._image = this._element.querySelector(".imagePreview");
   }
 
   close() {
@@ -19,5 +19,3 @@ class PopupWithImage extends Popup {
 }
 
 export default PopupWithImage;
-
-//trabaje en popupwithimage hice open
