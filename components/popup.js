@@ -25,9 +25,9 @@ class Popup {
     }
   }
 
-  _setEventListeners() {
+  setEventListeners() {
     this._closeIcon.addEventListener("click", () => this.close());
-    this._handleEscClose.addEventListener("click", () => this.close());
+    // this._handleEscClose.addEventListener("click", () => this.close());
     document.addEventListener("keydown", (event) =>
       this._handleEscClose(event)
     );

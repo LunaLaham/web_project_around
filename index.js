@@ -5,16 +5,31 @@ import PopupWithForm from "./components/PopupWithForm.js";
 import Popup from "./components/popup.js";
 import UserInfo from "./components/UserInfo.js";
 
-const profileEditButton = document.querySelector(".profile__edit-button");
 const addbutton = document.querySelector(".profile__add-button");
 const UserData = new UserInfo(".profile__title", ".profile__description");
-const userInfoPopup = new PopupWithForm(".profilepopup");
+
 const profileForm = document.querySelector("#profile-form");
 const profileCard = document.querySelector("#profileadd-form");
-profileForm.setEventListeners();
-const addCardPopup = new PopupWithForm(".popupadd");
-profileEditButton.addEventListener("click", () => {});
 
+const addCardPopup = new PopupWithForm(".popupadd");
+
+const userInfoPopup = new PopupWithForm(".profilepopup");
+//const otravariable = new PopupWithForm
+userInfoPopup.setEventListeners();
+const profileEditButton = document.querySelector(".profile__edit-button");
+profileEditButton.addEventListener("click", () => {
+  userInfoPopup.open();
+});
+
+const userInfoPopup = new PopupWithForm("#profileadd-form");
+const addPopup = new PopupWithForm();
+userInfoPopup.setEventListeners();
+const profileEditButton = document.querySelector(".profile__edit-button");
+profileEditButton.addEventListener("click", () => {
+  userInfoPopup.open();
+});
+
+//1.-
 const initialCards = [
   {
     name: "Valle de Yosemite",
