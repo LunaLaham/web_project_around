@@ -21,12 +21,11 @@ profileEditButton.addEventListener("click", () => {
   userInfoPopup.open();
 });
 
-const userInfoPopup = new PopupWithForm("#profileadd-form");
-const addPopup = new PopupWithForm();
+const userAddPopup = new PopupWithForm(".popupadd");
 userInfoPopup.setEventListeners();
-const profileEditButton = document.querySelector(".profile__edit-button");
-profileEditButton.addEventListener("click", () => {
-  userInfoPopup.open();
+const profileAddButton = document.querySelector(".profile__add-button");
+profileAddButton.addEventListener("click", () => {
+  userAddPopup.open();
 });
 
 //1.-
@@ -100,4 +99,4 @@ const infoValidator = new FormValidator(enableValidation, profileForm);
 infoValidator.enableValidation();
 
 const cardValidator = new FormValidator(enableValidation, profileCard);
-cardValidatorValidator.enableValidation();
+cardValidator.enableValidation();
