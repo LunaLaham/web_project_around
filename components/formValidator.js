@@ -50,7 +50,6 @@ export default class FormValidator {
       this.toggleButtonState(inputList);
       inputElement.addEventListener("input", () => {
         this.checkInputValidity(inputElement);
-        console.log("el usuario esta escribiendo");
         this.toggleButtonState(inputList);
       });
       inputElement.addEventListener("focus", () => {

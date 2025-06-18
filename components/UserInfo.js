@@ -9,7 +9,7 @@ class UserInfo {
       userProfesion: this.profesion.textContent,
     };
   }
-  setUserInfo(name, profesion) {
+  setUserInfo({ name, profesion }) {
     this.name.textContent = name;
     this.profesion.textContent = profesion;
   }

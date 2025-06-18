@@ -52,6 +52,8 @@
               <h2 class="form__title">Editar Perfil</h2>
               <input
                 id="name"
+                name="name"
+                ;
                 class="popup__input"
                 type="text"
                 placeholder="Nombre"
@@ -62,6 +64,8 @@
               <span class="popup__error name-error">error</span>
               <input
                 id="profesion"
+                name="profesion"
+                ;
                 class="popup__input"
                 type="text"
                 placeholder="Acerca de mi"
@@ -76,6 +80,12 @@
         </div>
 
         <div class="popup imagepopup">
+          <img
+            class="popup__close"
+            src="./images/CloseIcon.png"
+            alt="image preview"
+          />
+
           <img
             class="imagePreview"
             src="../images/CloseIcon.png"
@@ -95,6 +105,7 @@
               <h2 class="form__title">Agregar lugar nuevo</h2>
               <input
                 id="nameToAdd"
+                name="name"
                 class="popup__input"
                 type="text"
                 placeholder="Titulo"
@@ -105,6 +116,7 @@
               <span class="popup__error nameToAdd-error">error</span>
               <input
                 id="urlToadd"
+                name="link"
                 class="popup__input"
                 type="url"
                 placeholder="Imagen URL"

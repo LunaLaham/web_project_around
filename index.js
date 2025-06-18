@@ -11,24 +11,24 @@ const UserData = new UserInfo(".profile__title", ".profile__description");
 const profileForm = document.querySelector("#profile-form");
 const profileCard = document.querySelector("#profileadd-form");
 
-const addCardPopup = new PopupWithForm(".popupadd");
-
-const userInfoPopup = new PopupWithForm(".profilepopup");
-//const otravariable = new PopupWithForm
+const userInfoPopup = new PopupWithForm(".profilepopup", (data) => {
+  UserData.setUserInfo(data);
+});
 userInfoPopup.setEventListeners();
 const profileEditButton = document.querySelector(".profile__edit-button");
 profileEditButton.addEventListener("click", () => {
   userInfoPopup.open();
 });
 
-const userAddPopup = new PopupWithForm(".popupadd");
-userInfoPopup.setEventListeners();
+const userAddPopup = new PopupWithForm(".popupadd", (data) => {
+  cardlist.addItem(createCard(data));
+});
+userAddPopup.setEventListeners();
 const profileAddButton = document.querySelector(".profile__add-button");
 profileAddButton.addEventListener("click", () => {
   userAddPopup.open();
 });
 
-//1.-
 const initialCards = [
   {
     name: "Valle de Yosemite",
