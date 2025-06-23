@@ -1,4 +1,4 @@
-import { createCard } from "./components/Card.js";
+import { createCard } from "./Card.js";
 
 const popUpAdd = document.querySelector(".popup.popupadd");
 const popupProfile = document.querySelector(".popup.profilepopup");
