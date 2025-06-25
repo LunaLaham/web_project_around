@@ -1,9 +1,9 @@
-import FormValidator from "./components/formValidator.js";
-import { createCard } from "./components/Card.js";
-import Section from "./components/section.js";
-import PopupWithForm from "./components/PopupWithForm.js";
-import Popup from "./components/popup.js";
-import UserInfo from "./components/UserInfo.js";
+import FormValidator from "../components/formValidator.js";
+import { createCard } from "../components/Card.js";
+import Section from "../components/section.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Popup from "../components/popup.js";
+import UserInfo from "../components/UserInfo.js";
 
 const addbutton = document.querySelector(".profile__add-button");
 const UserData = new UserInfo(".profile__title", ".profile__description");
