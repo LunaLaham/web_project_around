@@ -16,7 +16,6 @@ class PopupWithForm extends Popup {
     const FormValues = {};
     this._inputList.forEach((input) => {
       FormValues[input.name] = input.value;
-      console.log(FormValues);
     });
     return FormValues;
   }
